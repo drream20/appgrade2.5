@@ -1,0 +1,20 @@
+# AppGrade — Hostinger / Apache / LiteSpeed
+AddDefaultCharset UTF-8
+
+# If the app lives in a subfolder (e.g. https://yoursite.com/appgrade/), uncomment:
+# SetEnv APPGRADE_BASE_URL /appgrade
+
+# MySQL from hPanel → Websites → Manage → Databases (use database name, user, and password shown there)
+# Alternatively, use instructor/config/database.local.php (recommended).
+<IfModule mod_env.c>
+    # Uncomment and fill in — then remove or comment out database.local.php if you use both
+    # SetEnv APPGRADE_DB_HOST localhost
+    # SetEnv APPGRADE_DB_NAME "u123456789_your_database"
+    # SetEnv APPGRADE_DB_USER "u123456789_your_user"
+    # SetEnv APPGRADE_DB_PASS "your_password"
+</IfModule>
+
+# Hardening
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>

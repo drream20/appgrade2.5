@@ -1,0 +1,2 @@
+UPDATE students SET welcome_modal_ack = 1;
+UPDATE instructors SET welcome_modal_ack = 1;

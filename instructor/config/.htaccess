@@ -1,0 +1,10 @@
+# Do not allow HTTP access to local credentials
+<Files "database.local.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</Files>
