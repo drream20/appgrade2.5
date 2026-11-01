@@ -83,9 +83,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>AppGrade Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #f3f4f6; }
-        .brand-blue { color: #1e3a8a; }
+        :root {
+            --primary-navy: #1E3A5F;
+            --brand-blue: #23469A;
+            --light-blue: #E8F0FC;
+            --page-bg: #F3F6FA;
+            --main-white: #FFFFFF;
+            --primary-text: #172033;
+            --secondary-text: #75849A;
+            --input-border: #D6DFEC;
+        }
+
+        body {
+            background-color: var(--page-bg);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .brand-blue { color: var(--brand-blue); }
         .bg-brand-blue { background-color: #1a365d; }
+        .bg-primary-navy { background-color: var(--primary-navy); }
+
+        .input-style {
+            @apply w-full px-3 py-2 rounded-md border border-input-style bg-white transition duration-200 focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-offset-2;
+        }
+
+        .btn-style {
+            @apply w-full bg-primary-navy text-white font-semibold py-3 rounded-md hover:bg-blue-900 transition duration-200 shadow-md focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+
+        .helper-text { @apply text-gray-400 text-xs mt-2; }
     </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
